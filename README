@@ -1,0 +1,60 @@
+nadav366
+
+itay.tayar guyk12123 yair.shemer
+
+=============================
+=      File description     =
+=============================
+
+SpaceShip.java - Abstract class. Father of SpaceShip objects.
+
+SpaceShipAggressive.java - A class that is an aggressive space ship.
+SpaceShipRunner.java - A class that is an runner space ship.
+SpaceShipBasher.java - A class that is an Basher space ship.
+SpaceShipHuman.java - A class that is an Human space ship, Which the user controls with the graphical interface.
+SpaceShipDrunkard.java - A class that is an Drunkard space ship.
+SpaceShipSpecial.java - A class that is an Special space ship.
+
+SpaceShipFactory.java - A class that initializes all space ships, depending on the user's choice.
+
+=============================
+=          Design           =
+=============================
+A file that is a Space Ships game.
+I got the graphical interface and the game engine, and  wrote
+the various ship classes and class that initializes all space ships.
+
+Since each ship has a certain type, I chose to implement an abstract class - SpaceShip that gives the
+ship the general features and operations of all ships -
+Health, maximum and current energy, shield status, and physics object.
+In addition, the class gives the ships the basic operations of shooting, collision, hit, death,
+image handling, transcription, and part of the line that is common to all ships.
+
+Each class of a special ship extends from the general ship class all the attributes and implements the special
+ doAction for each ship.
+Some ships need to override additional functions to accommodate the ship's special features.
+
+In this way, in my opinion, modular program that can be easily add and remove types of ships.
+Even within each ship you can easily control its functions and behavior.
+
+=============================
+=       Special ships       =
+=============================
+Drunkard - The drunken movement is divided into 70 revolutions in mode, and then 50 accelerates straight.
+           In each mode, he randomly encounters a guy (left or right) and moves toward him without speeding.
+           When he is out of mod he can randomly teleport and shoot.
+
+Special - The special ship has two modes -
+          Attack mode, When it has enough energy, it tries to approach the ships and then attack them
+           aggressively, at a very rapid shooting rate, wearing a shield before a collision.
+          When the ship does not have enough energy, it moves away from all ships to charge and gain energy
+           for another aggressive round.
+
+
+=============================
+=  Implementation details   =
+=============================
+Some of the SpaceShip features are protected, allowing the Bat ships to have their own special fiche.
+
+Since all the ships have the same image, except for the human, I chose to use the general ship in the normal
+picture, and in the human ship department to override the function and put the correct image.
